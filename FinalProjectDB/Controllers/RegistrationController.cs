@@ -17,9 +17,11 @@ namespace FinalProjectDB.Controllers
         public ActionResult Index(int eventId)
         {
             RegistrationService regService = new RegistrationService();
+            EventService evService = new EventService();
             var registrations = regService.GetRegistrations(eventId);
 
             TempData["EventID"] = eventId;
+            TempData["EventsList"] = evService.GetEvents();
 
             return View(registrations);
         }

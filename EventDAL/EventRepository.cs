@@ -12,7 +12,7 @@ namespace EventDAL
     public class EventRepository
     {
         public List<Event> eventsList = new List<Event>();
-
+        
         public List<Event> GetEvents()
         {
             using (SqlConnection conn = new SqlConnection(Connection.connectionString))
